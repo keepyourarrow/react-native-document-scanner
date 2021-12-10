@@ -1,6 +1,7 @@
-package com.rectanglescanner.helpers;
+package com.documentscanner.helpers;
 
 import org.opencv.core.MatOfPoint;
+import org.opencv.core.MatOfPoint2f;
 import org.opencv.core.Rect;
 import org.opencv.core.Mat;
 import org.opencv.core.Point;
@@ -9,18 +10,20 @@ import org.opencv.core.Size;
 import android.os.Bundle;
 
 /**
- * Created by Jake on Jan 6, 2020.
+ * Created by Dima on Oct 30, 2021.
  * Represents the detected rectangle from an image
  */
 public class Quadrilateral {
     public MatOfPoint contour;
     public Point[] points;
     public Size sourceSize;
+    public Rect box;
 
-    public Quadrilateral(MatOfPoint contour, Point[] points, Size sourceSize) {
+    public Quadrilateral(MatOfPoint contour,Point[] points, Size sourceSize, Rect box) {
         this.contour = contour;
         this.points = points;
         this.sourceSize = sourceSize;
+        this.box = box;
     }
 
     /**
@@ -100,6 +103,13 @@ public class Quadrilateral {
       dimensions.putDouble("height", this.sourceSize.height);
       dimensions.putDouble("width", this.sourceSize.width);
       quadMap.putBundle("dimensions", dimensions);
+
+      Bundle box = new Bundle();
+      box.putDouble("x", this.box.x);
+      box.putDouble("y", this.box.y);
+      box.putDouble("width", this.box.width);
+      box.putDouble("height", this.box.height);
+      quadMap.putBundle("box", box);
 
       return quadMap;
     }

@@ -1,4 +1,4 @@
-package com.rectanglescanner.views;
+package com.documentscanner.views;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,11 +10,11 @@ import android.view.Display;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
-import com.rectanglescanner.R;
-import com.rectanglescanner.helpers.ImageProcessor;
-import com.rectanglescanner.helpers.CustomOpenCVLoader;
-import com.rectanglescanner.helpers.ImageProcessorMessage;
-import com.rectanglescanner.helpers.CapturedImage;
+import com.documentscanner.R;
+import com.documentscanner.helpers.ImageProcessor;
+import com.documentscanner.helpers.CustomOpenCVLoader;
+import com.documentscanner.helpers.ImageProcessorMessage;
+import com.documentscanner.helpers.CapturedImage;
 import com.facebook.react.bridge.WritableMap;
 
 import org.opencv.android.BaseLoaderCallback;
@@ -23,7 +23,7 @@ import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Mat;
 
 /**
-  Created by Jake on Jan 6, 2020.
+  Created by Dima on Oct 30, 2021.
 
   Takes the output from the camera device controller and attempts to detect
   rectangles from the output. On capture, it will also crop the image.
@@ -120,14 +120,15 @@ public class RectangleDetectionController extends CameraDeviceController {
           setImageProcessorBusy(true);
           Message msg = mImageProcessor.obtainMessage();
           msg.obj = new ImageProcessorMessage("previewFrame", image);
-          mImageProcessor.sendMessageDelayed(msg, 100);
+          mImageProcessor.sendMessageDelayed(msg, 0);
       }
     }
 
     /**
      Called after a frame is processed and a rectangle was found
      */
-    public void rectangleWasDetected(WritableMap detection) {}
+    public void rectangleWasDetected(WritableMap detection) {
+    }
 
     //================================================================================
     // Capture Image
@@ -148,6 +149,5 @@ public class RectangleDetectionController extends CameraDeviceController {
      After an image is captured and cropped, this method is called
      */
     public void onProcessedCapturedImage(CapturedImage scannedDocument) {
-
     }
 }

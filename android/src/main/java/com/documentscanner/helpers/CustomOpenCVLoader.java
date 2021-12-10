@@ -1,4 +1,4 @@
-package com.rectanglescanner.helpers;
+package com.documentscanner.helpers;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -20,7 +20,6 @@ import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.rectanglescanner.R;
 
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;

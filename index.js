@@ -10,4 +10,4 @@ export {
   FlashAnimation,
 };
 
-export const CACHE_FOLDER_NAME = 'RNRectangleScanner';
+export const CACHE_FOLDER_NAME = 'DocumentScanner';

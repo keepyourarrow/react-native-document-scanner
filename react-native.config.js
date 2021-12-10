@@ -2,7 +2,7 @@ module.exports = {
   dependency: {
     platforms: {
       android: {
-        packageImportPath: 'import com.rectanglescanner.RectangleScannerPackage;',
+        packageImportPath: 'import com.documentscanner.RectangleScannerPackage;',
         packageInstance: 'new RectangleScannerPackage()',
       },
     },

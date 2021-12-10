@@ -1,4 +1,4 @@
-package com.rectanglescanner.views;
+package com.documentscanner.views;
 
 import android.app.Activity;
 import android.content.Context;
@@ -20,7 +20,7 @@ import android.view.WindowManager;
 import android.content.res.Configuration;
 import android.widget.FrameLayout;
 
-import com.rectanglescanner.R;
+import com.documentscanner.R;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableNativeMap;
 
@@ -34,7 +34,7 @@ import java.util.List;
 
 
 /**
-  Created by Jake on Jan 6, 2020.
+  Created by Dim on Oct 30, 2021.
 
   Handles Generic camera device setup and capture
 */
@@ -240,38 +240,56 @@ public class CameraDeviceController extends JavaCameraView implements PictureCal
     Given a list of resolution sizes and a ratio to fit to, it will find the highest resolution
     that fits the ratio the best.
     */
-    private Camera.Size getOptimalResolution(float ratioToFitTo, List<Camera.Size> resolutionList) {
-        int maxPixels = 0;
-        int ratioMaxPixels = 0;
-        double bestRatioDifference = 5;
-        Camera.Size currentMaxRes = null;
-        Camera.Size ratioCurrentMaxRes = null;
-        for (Camera.Size r : resolutionList) {
-            float pictureRatio = (float) r.width / r.height;
-            Log.d(TAG, "supported resolution: " + r.width + "x" + r.height + " ratio: " + pictureRatio + " ratioToFitTo: " + ratioToFitTo);
-            int resolutionPixels = r.width * r.height;
-            double ratioDifference = Math.abs(ratioToFitTo - pictureRatio);
-            if (resolutionPixels > ratioMaxPixels && ratioDifference < bestRatioDifference) {
-                ratioMaxPixels = resolutionPixels;
-                ratioCurrentMaxRes = r;
-                bestRatioDifference = ratioDifference;
-            }
+    private Camera.Size getOptimalResolution(float ratioToFitTo, List<Camera.Size> sizes) {
+        // int maxPixels = 0;
+        // int ratioMaxPixels = 0;
+        // double bestRatioDifference = 4;
+        // Camera.Size currentMaxRes = null;
+        // Camera.Size ratioCurrentMaxRes = null;
+        // for (Camera.Size r : resolutionList) {
+        //     float pictureRatio = (float) r.width / r.height;
+        //     boolean isDesiredRatio = (r.width / 4) == (r.height / 3);
+        //     Log.d(TAG, "supported resolution: " + r.width + "x" + r.height + " ratio: " + pictureRatio + " ratioToFitTo: " + ratioToFitTo + " isDesiredRatio " + isDesiredRatio);
+        //     int resolutionPixels = r.width * r.height;
+        //     double ratioDifference = Math.abs(ratioToFitTo - pictureRatio);
+        //     if (resolutionPixels > ratioMaxPixels && ratioDifference < bestRatioDifference) {
+        //         ratioMaxPixels = resolutionPixels;
+        //         // ratioCurrentMaxRes = r; # my comment
+        //         bestRatioDifference = ratioDifference;
+        //     }
 
-            if (resolutionPixels > maxPixels) {
-                maxPixels = resolutionPixels;
-                currentMaxRes = r;
+        //     if (resolutionPixels > maxPixels) {
+        //         maxPixels = resolutionPixels;
+        //         currentMaxRes = r;
+        //     }
+        // }
+
+        // if (ratioCurrentMaxRes != null) {
+
+        //     Log.d(TAG, "Max supported resolution with aspect ratio: " + ratioCurrentMaxRes.width + "x"
+        //             + ratioCurrentMaxRes.height);
+        //     return ratioCurrentMaxRes;
+
+        // }
+
+        // return currentMaxRes;
+        Camera.Size bestSize = null;
+        long used = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+        long availableMemory = Runtime.getRuntime().maxMemory() - used;
+        for (Camera.Size currentSize : sizes) {
+            int newArea = currentSize.width * currentSize.height;
+            long neededMemory = newArea * 4 * 4; // newArea * 4 Bytes/pixel * 4 needed copies of the bitmap (for safety :) )
+            boolean isDesiredRatio = (currentSize.width / 4) == (currentSize.height / 3);
+            boolean isBetterSize = (bestSize == null || currentSize.width > bestSize.width);
+            boolean isSafe = neededMemory < availableMemory;
+            if (isDesiredRatio && isBetterSize && isSafe) {
+                bestSize = currentSize;
             }
         }
-
-        if (ratioCurrentMaxRes != null) {
-
-            Log.d(TAG, "Max supported resolution with aspect ratio: " + ratioCurrentMaxRes.width + "x"
-                    + ratioCurrentMaxRes.height);
-            return ratioCurrentMaxRes;
-
+        if (bestSize == null) {
+            return sizes.get(0);
         }
-
-        return currentMaxRes;
+        return bestSize;
     }
 
     //================================================================================
@@ -341,6 +359,7 @@ public class CameraDeviceController extends JavaCameraView implements PictureCal
       param.setWhiteBalance(Camera.Parameters.WHITE_BALANCE_AUTO);
       float previewRatio = (float) pSize.width / pSize.height;
       setDevicePreviewSize(previewRatio);
+      Log.d(TAG, "previewRatio" + previewRatio);
 
       Camera.Size maxRes = getOptimalResolution(previewRatio, getPictureResolutionList());
       if (maxRes != null) {

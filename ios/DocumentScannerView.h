@@ -1,15 +1,13 @@
 //
-//  RNRectangleScannerView.h
+//  DocumentScannerView.h
 //
-//  Created by Jake Humphrey on Jan 6, 2020.
-//  Copyright (c) 2020 Jake Humphrey. All rights reserved.
-//
+
 
 
 #import "RectangleDetectionController.h"
 #import <React/RCTViewManager.h>
 
-@interface RNRectangleScannerView : RectangleDetectionController
+@interface DocumentScannerView : RectangleDetectionController
 
 @property (nonatomic, copy) RCTDirectEventBlock onDeviceSetup;
 @property (nonatomic, copy) RCTDirectEventBlock onTorchChanged;

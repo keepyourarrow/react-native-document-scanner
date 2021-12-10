@@ -1,16 +1,14 @@
 //
-//  RNRectangleScannerView.m
-//
-//  Created by Jake Humphrey on Jan 6, 2020.
-//  Copyright (c) 2020 Jake Humphrey. All rights reserved.
+//  DocumentScannerView.m
 //
 
-#import "RNRectangleScannerView.h"
+
+#import "DocumentScannerView.h"
 
 /*!
  Wraps up the camera and rectangle detection code into a simple interface.  Allows you to call start, stop, cleanup, and capture. Also is responsible for deterining how to cache the output images.
  */
-@implementation RNRectangleScannerView
+@implementation DocumentScannerView
 
 - (instancetype)init {
   self = [super init];
@@ -94,7 +92,7 @@ After capture, the image is stored and sent to the event handler
 */
 -(void)onProcessedCapturedImage:(UIImage *)croppedImage initialImage: (UIImage *) initialImage lastRectangleFeature: (CIRectangleFeature *) lastRectangleFeature {
   NSString *dir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
-  NSString *storageFolder = @"RNRectangleScanner";
+  NSString *storageFolder = @"DocumentScanner";
 
   dir = [dir stringByAppendingPathComponent:storageFolder];
 

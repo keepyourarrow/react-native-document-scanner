@@ -1,7 +1,7 @@
-package com.rectanglescanner;
+package com.documentscanner;
 
 import android.app.Activity;
-import com.rectanglescanner.views.MainView;
+import com.documentscanner.views.MainView;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.ThemedReactContext;
@@ -13,11 +13,11 @@ import javax.annotation.Nullable;
 import java.util.Map;
 
 /**
- * Created by Jake on Jan 6, 2020.
+ * Created by Dima on Oct 30, 2021.
  */
-public class RNRectangleScannerManager extends ViewGroupManager<MainView> {
+public class DocumentScannerManager extends ViewGroupManager<MainView> {
 
-    private static final String REACT_CLASS = "RNRectangleScanner";
+    private static final String REACT_CLASS = "DocumentScanner";
     private MainView view = null;
 
     @Override
@@ -63,6 +63,8 @@ public class RNRectangleScannerManager extends ViewGroupManager<MainView> {
             "onRectangleDetected", MapBuilder.of("registrationName", "onRectangleDetected"),
 
             "onTorchChanged", MapBuilder.of("registrationName", "onTorchChanged")
+
+//            "contrastTooLow", MapBuilder.of("registrationName", "contrastTooLow")
         );
     }
 }

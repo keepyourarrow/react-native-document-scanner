@@ -1,8 +1,13 @@
 import { PropTypes } from 'prop-types';
 import React, { Component } from 'react';
 import { Dimensions, View } from 'react-native';
-import { Svg, Path } from 'react-native-svg';
+import { Svg, Path, Rect } from 'react-native-svg';
 
+
+/**
+ * Shows rectangle (courtesy of findContours method of opencv)
+ * @param detectedRectangle(required, else it won't display anything)
+ */
 function getDifferenceBetweenRectangles(firstRectangle, secondRectangle) {
   const topRightXDiff = Math.abs(firstRectangle.topRight.x - secondRectangle.topRight.x);
   const topRightYDiff = Math.abs(firstRectangle.topRight.y - secondRectangle.topRight.y);
@@ -139,6 +144,7 @@ export default class RectangleOverlay extends Component {
       bottomRight,
       bottomLeft,
       dimensions,
+      box
     } = detectedRectangle;
     const deviceWindow = Dimensions.get('window');
     const commands = [];
@@ -164,10 +170,19 @@ export default class RectangleOverlay extends Component {
     return (
       <View style={{ position: 'absolute', top: 0, bottom: 0, right: 0, left: 0, backgroundColor: 'rgba(0,0,0,0)' }}>
         <Svg height={deviceWindow.height * previewRatio.height} width={deviceWindow.width * previewRatio.width} viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}>
-          <Path
+        <Rect
+          x={box.x}
+          y={box.y}
+          width={box.width}
+          height={box.height}
+          fill={fill}
+          strokeWidth={strokeWidth}
+          stroke={stroke}
+        />
+          {/* <Path
             d={d}
             style={{ fill, stroke, strokeWidth, strokeLinejoin: 'round', strokeLinecap: 'round' }}
-          />
+          /> */}
         </Svg>
       </View>
     );

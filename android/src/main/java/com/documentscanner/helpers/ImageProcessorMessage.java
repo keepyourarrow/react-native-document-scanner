@@ -1,7 +1,7 @@
-package com.rectanglescanner.helpers;
+package com.documentscanner.helpers;
 
 /**
- * Created by Jake on Jan 6, 2020.
+ * Created by Dima on Oct 30, 2021.
  */
 public class ImageProcessorMessage  {
 

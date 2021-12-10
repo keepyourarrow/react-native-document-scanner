@@ -1,4 +1,4 @@
-package com.rectanglescanner;
+package com.documentscanner;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -11,20 +11,20 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by Jake on Jan 6, 2020.
+ * Created by Dima on Oct 30, 2021.
  */
-public class RectangleScannerPackage implements ReactPackage {
+public class DocumentScannerPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.<NativeModule>asList(
-            new RNRectangleScannerModule(reactContext)
+            new DocumentScannerModule(reactContext)
         );
     }
 
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         return Arrays.<ViewManager>asList(
-                new RNRectangleScannerManager()
+                new DocumentScannerManager()
         );
     }
 }

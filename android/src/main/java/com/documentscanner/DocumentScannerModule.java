@@ -1,23 +1,23 @@
-package com.rectanglescanner;
+package com.documentscanner;
 
-import com.rectanglescanner.views.MainView;
+import com.documentscanner.views.MainView;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 
 /**
- * Created by Jake on Jan 6, 2020.
+ * Created by Dima on Oct 30, 2021.
  */
 
-public class RNRectangleScannerModule extends ReactContextBaseJavaModule{
+public class DocumentScannerModule extends ReactContextBaseJavaModule{
 
-    public RNRectangleScannerModule(ReactApplicationContext reactContext){
+    public DocumentScannerModule(ReactApplicationContext reactContext){
         super(reactContext);
     }
 
     @Override
     public String getName() {
-        return "RNRectangleScannerManager";
+        return "DocumentScannerManager";
     }
 
     @ReactMethod

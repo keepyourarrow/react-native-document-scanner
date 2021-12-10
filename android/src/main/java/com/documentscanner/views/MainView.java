@@ -1,6 +1,7 @@
-package com.rectanglescanner.views;
+package com.documentscanner.views;
 
 import android.app.Activity;
+import android.content.pm.ActivityInfo;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
@@ -9,12 +10,13 @@ import com.facebook.react.bridge.WritableNativeMap;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 
-import com.rectanglescanner.R;
+import com.documentscanner.R;
 
 public class MainView extends FrameLayout {
-    private RNRectangleScannerView view;
+    private DocumentScannerView view;
 
     public static MainView instance = null;
+
 
     public static MainView getInstance() {
         return instance;
@@ -28,9 +30,10 @@ public class MainView extends FrameLayout {
         super(context);
 
         LayoutInflater lf = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        FrameLayout frameLayout = (FrameLayout) lf.inflate(R.layout.activity_rectangle_scanner, null);
+        FrameLayout frameLayout = (FrameLayout) lf.inflate(R.layout.camera_layout, null);
+        activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // so a phone won't rotate
 
-        view = new RNRectangleScannerView(context, -1, activity, frameLayout);
+        view = new DocumentScannerView(context, -1, activity, frameLayout);
         view.setParent(this);
         addViewInLayout(view, 0, new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
         addViewInLayout(frameLayout, 1, view.getLayoutParams());
@@ -106,4 +109,10 @@ public class MainView extends FrameLayout {
       final ReactContext context = (ReactContext) getContext();
       context.getJSModule(RCTEventEmitter.class).receiveEvent(getId(), "onErrorProcessingImage", errorDetails);
     }
+
+
+//    public void contrastTooLow(WritableMap details) {
+//      final ReactContext context = (ReactContext) getContext();
+//      context.getJSModule(RCTEventEmitter.class).receiveEvent(getId(), "contrastTooLow", details);
+//    }
 }

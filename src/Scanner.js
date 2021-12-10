@@ -7,8 +7,8 @@ import {
   PermissionsAndroid,
 } from 'react-native';
 
-const RNRectangleScanner = requireNativeComponent('RNRectangleScanner');
-const CameraManager = NativeModules.RNRectangleScannerManager || {};
+const DocumentScanner = requireNativeComponent('DocumentScanner');
+const CameraManager = NativeModules.DocumentScannerManager || {};
 
 class Scanner extends React.Component {
   static propTypes = {
@@ -148,7 +148,7 @@ class Scanner extends React.Component {
 
   render() {
     return (
-      <RNRectangleScanner
+      <DocumentScanner
         {...this.props}
         onPictureTaken={this.sendOnPictureTakenEvent}
         onPictureProcessed={this.sendOnPictureProcessedEvent}

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "58B511DA1A9E6C8500147676"
-               BuildableName = "libRNRectangleScanner.a"
-               BlueprintName = "RNRectangleScanner"
-               ReferencedContainer = "container:RNRectangleScanner.xcodeproj">
+               BuildableName = "libDocumentScanner.a"
+               BlueprintName = "DocumentScanner"
+               ReferencedContainer = "container:DocumentScanner.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -51,9 +51,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "58B511DA1A9E6C8500147676"
-            BuildableName = "libRNRectangleScanner.a"
-            BlueprintName = "RNRectangleScanner"
-            ReferencedContainer = "container:RNRectangleScanner.xcodeproj">
+            BuildableName = "libDocumentScanner.a"
+            BlueprintName = "DocumentScanner"
+            ReferencedContainer = "container:DocumentScanner.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

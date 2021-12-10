@@ -1,11 +1,11 @@
-package com.rectanglescanner.helpers;
+package com.documentscanner.helpers;
 
 import org.opencv.core.Mat;
 import org.opencv.core.Point;
 import org.opencv.core.Size;
 
 /**
- * Created by Jake on Jan 6, 2020.
+ * Created by Dima on Oct 30, 2021.
  */
 public class CapturedImage {
 

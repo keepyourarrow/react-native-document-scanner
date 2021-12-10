@@ -1,12 +1,12 @@
-package com.rectanglescanner.views;
+package com.documentscanner.views;
 
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 import android.widget.FrameLayout;
 
-import com.rectanglescanner.R;
-import com.rectanglescanner.helpers.CapturedImage;
+import com.documentscanner.R;
+import com.documentscanner.helpers.CapturedImage;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableNativeMap;
 
@@ -21,21 +21,21 @@ import java.io.File;
 import java.util.ArrayList;
 
 /**
-  Created by Jake on Jan 6, 2020.
+  Created by Dima on Oct 30, 2021.
 
   Wraps up the camera and rectangle detection code into a simple interface.
   Allows you to call start, stop, cleanup, and capture. Also is responsible
-  for deterining how to cache the output images.
+  for determining how to cache the output images.
 */
-public class RNRectangleScannerView extends RectangleDetectionController {
-    private String cacheFolderName = "RNRectangleScanner";
+public class DocumentScannerView extends RectangleDetectionController {
+    private String cacheFolderName = "DocumentScanner";
     private double capturedQuality = 0.5;
 
     //================================================================================
     // Setup
     //================================================================================
 
-    public RNRectangleScannerView(Context context, Integer numCam, Activity activity, FrameLayout frameLayout) {
+    public DocumentScannerView(Context context, Integer numCam, Activity activity, FrameLayout frameLayout) {
         super(context, numCam, activity, frameLayout);
     }
 
@@ -110,6 +110,15 @@ public class RNRectangleScannerView extends RectangleDetectionController {
     public void rectangleWasDetected(WritableMap detection) {
       this.parentView.rectangleWasDetected(detection);
     }
+
+
+    /**
+     Called if contrast is too low
+     */
+//    @Override
+//    public void contrastTooLow(WritableMap details) {
+//      this.parentView.contrastTooLow(details);
+//    }
 
 
     /**
