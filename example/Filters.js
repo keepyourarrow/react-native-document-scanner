@@ -2,7 +2,7 @@ import { PropTypes } from 'prop-types';
 import React, { Component } from 'react';
 import { Dimensions, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { Filters } from 'react-native-rectangle-scanner';
+import { Filters } from 'react-native-document-scanner';
 
 // Renders a list of available filters for the platform
 export default class ScannerFilters extends Component {

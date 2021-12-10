@@ -2,7 +2,7 @@ import { PropTypes } from 'prop-types';
 import React, { PureComponent } from 'react';
 import { ActivityIndicator, Animated, Dimensions, Platform, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Scanner, { Filters, RectangleOverlay } from 'react-native-rectangle-scanner';
+import Scanner, { Filters, RectangleOverlay } from 'react-native-document-scanner';
 import ScannerFilters from './Filters';
 
 const styles = StyleSheet.create({

@@ -1,5 +1,5 @@
 
-declare module 'react-native-rectangle-scanner' {
+declare module 'react-native-document-scanner' {
   import { ComponentClass } from 'react';
   import { ViewProps, Animated } from 'react-native';
 

@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
   s.description    = package['description']
   s.license        = package['license']
   s.author         = package['author']
-  s.homepage       = 'https://github.com/HarvestProfit/react-native-rectangle-scanner'
-  s.source         = { git: 'https://github.com/HarvestProfit/react-native-rectangle-scanner.git', tag: s.version }
+  s.homepage       = 'https://github.com/HarvestProfit/react-native-document-scanner'
+  s.source         = { git: 'https://github.com/HarvestProfit/react-native-document-scanner.git', tag: s.version }
 
   s.requires_arc   = true
   s.platform       = :ios, '10.0'
