@@ -4,10 +4,10 @@
 
 
 
-#import "RectangleDetectionController.h"
+#import "DocumentDetectionController.h"
 #import <React/RCTViewManager.h>
 
-@interface DocumentScannerView : RectangleDetectionController
+@interface DocumentScannerView : DocumentDetectionController
 
 @property (nonatomic, copy) RCTDirectEventBlock onDeviceSetup;
 @property (nonatomic, copy) RCTDirectEventBlock onTorchChanged;

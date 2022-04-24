@@ -10,7 +10,7 @@
 		23036F1023AABB5400C4A663 /* CameraDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23036F0923AABB5400C4A663 /* CameraDeviceController.m */; };
 		23036F1123AABB5400C4A663 /* DocumentScannerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 23036F0A23AABB5400C4A663 /* DocumentScannerManager.m */; };
 		23036F1223AABB5400C4A663 /* DocumentScannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23036F0C23AABB5400C4A663 /* DocumentScannerView.m */; };
-		23036F1323AABB5400C4A663 /* RectangleDetectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23036F0D23AABB5400C4A663 /* RectangleDetectionController.m */; };
+		23036F1323AABB5400C4A663 /* DocumentDetectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23036F0D23AABB5400C4A663 /* DocumentDetectionController.m */; };
 		23036F4923AABDBE00C4A663 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23036F2A23AABDB000C4A663 /* libReact.a */; };
 /* End PBXBuildFile section */
 
@@ -143,12 +143,12 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libDocumentScanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDocumentScanner.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		23036F0823AABB5400C4A663 /* RectangleDetectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectangleDetectionController.h; sourceTree = "<group>"; };
+		23036F0823AABB5400C4A663 /* DocumentDetectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentDetectionController.h; sourceTree = "<group>"; };
 		23036F0923AABB5400C4A663 /* CameraDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraDeviceController.m; sourceTree = "<group>"; wrapsLines = 1; };
 		23036F0A23AABB5400C4A663 /* DocumentScannerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentScannerManager.m; sourceTree = "<group>"; };
 		23036F0B23AABB5400C4A663 /* CameraDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraDeviceController.h; sourceTree = "<group>"; };
 		23036F0C23AABB5400C4A663 /* DocumentScannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentScannerView.m; sourceTree = "<group>"; };
-		23036F0D23AABB5400C4A663 /* RectangleDetectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectangleDetectionController.m; sourceTree = "<group>"; };
+		23036F0D23AABB5400C4A663 /* DocumentDetectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentDetectionController.m; sourceTree = "<group>"; };
 		23036F0E23AABB5400C4A663 /* DocumentScannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentScannerView.h; sourceTree = "<group>"; };
 		23036F0F23AABB5400C4A663 /* DocumentScannerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentScannerManager.h; sourceTree = "<group>"; };
 		23036F1623AABDAF00C4A663 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
@@ -214,8 +214,8 @@
 				23036F0C23AABB5400C4A663 /* DocumentScannerView.m */,
 				23036F0F23AABB5400C4A663 /* DocumentScannerManager.h */,
 				23036F0A23AABB5400C4A663 /* DocumentScannerManager.m */,
-				23036F0823AABB5400C4A663 /* RectangleDetectionController.h */,
-				23036F0D23AABB5400C4A663 /* RectangleDetectionController.m */,
+				23036F0823AABB5400C4A663 /* DocumentDetectionController.h */,
+				23036F0D23AABB5400C4A663 /* DocumentDetectionController.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				23036F1523AABDAF00C4A663 /* Frameworks */,
 			);
@@ -402,7 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23036F1123AABB5400C4A663 /* DocumentScannerManager.m in Sources */,
-				23036F1323AABB5400C4A663 /* RectangleDetectionController.m in Sources */,
+				23036F1323AABB5400C4A663 /* DocumentDetectionController.m in Sources */,
 				23036F1223AABB5400C4A663 /* DocumentScannerView.m in Sources */,
 				23036F1023AABB5400C4A663 /* CameraDeviceController.m in Sources */,
 			);

@@ -1,5 +1,5 @@
 //
-//  RectangleDetectionController.h
+//  DocumentDetectionController.h
 //
 //  Created by Jake Humphrey on Jan 6, 2020.
 //  Copyright (c) 2020 Jake Humphrey. All rights reserved.
@@ -9,7 +9,7 @@
 #import "CameraDeviceController.h"
 #import <React/RCTViewManager.h>
 
-@interface RectangleDetectionController : CameraDeviceController
+@interface DocumentDetectionController : CameraDeviceController
 
 - (void)setupCameraView;
 

@@ -1,11 +1,11 @@
 //
-//  RectangleDetectionController.m
+//  DocumentDetectionController.m
 //
 //  Created by Jake Humphrey on Jan 6, 2020.
 //  Copyright (c) 2020 Jake Humphrey. All rights reserved.
 //
 
-#import "RectangleDetectionController.h"
+#import "DocumentDetectionController.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import <CoreMedia/CoreMedia.h>
@@ -13,7 +13,7 @@
 #import <CoreImage/CoreImage.h>
 #import <ImageIO/ImageIO.h>
 
-@interface RectangleDetectionController ()
+@interface DocumentDetectionController ()
 
 @property (nonatomic, assign) float lastDetectionRate;
 
@@ -23,7 +23,7 @@
  Takes the output from the camera device controller and attempts to detect rectangles from the output. On capture,
  it will also crop the image.
  */
-@implementation RectangleDetectionController
+@implementation DocumentDetectionController
 {
   CGFloat _imageDedectionConfidence;
   NSTimer *_borderDetectTimeKeeper;
